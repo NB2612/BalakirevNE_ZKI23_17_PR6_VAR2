@@ -20,7 +20,9 @@ public class Input {
       return item;
     }
     scanner.nextLine();
-    System.out.println("\u001B[31mОшибка: Введеный символ не является числом\u001B[0m");
+    System.out.println("\u001B[31mОшибка: Введеный символ не является числом или "
+        + "не соответствует типу данных\n"
+        + "Будет передано значение 0\u001B[0m");
     return 0;
   }
 
@@ -29,8 +31,8 @@ public class Input {
    *
    * @return возвращает элемент из строки в формате Object
    */
-  public Object nextObj() {
-    return scanner.next();
+  public String nextLine() {
+    return scanner.nextLine();
   }
 
   public void close() {

@@ -5,17 +5,16 @@
  */
 public class Stack<T> {
 
+  private static final int DEFAULT_CAPACITY = 10;
   private final T[] stackArray; // Массив для хранения элементов стека
   private int top; // Индекс вершины стека
 
   /**
    * Создает новый стек с заданной вместимостью.
-   *
-   * @param capacity вместимость стека
    */
   @SuppressWarnings("unchecked")
-  public Stack(int capacity) {
-    stackArray = (T[]) new Object[capacity];
+  public Stack() {
+    stackArray = (T[]) new Object[DEFAULT_CAPACITY];
     top = -1;
   }
 
@@ -128,7 +127,7 @@ public class Stack<T> {
       }
     }
     if (foundIndex != -1) {
-      return foundIndex + " | " + stackArray[foundIndex];
+      return (foundIndex + " | " + stackArray[foundIndex]);
     }
     return null;
   }
